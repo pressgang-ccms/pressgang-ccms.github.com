@@ -1,0 +1,268 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>This Week in Skynet #23 - The PressGang CCMS Project</title>
+  <meta name="author" content="The PressGang CCMS Project">
+
+  
+  <meta name="description" content="This week we upgraded to using HTTPS on the server and continued to extend the Zanata support. HTTPS Login The login page now uses HTTPS. The &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://pressgang-ccms.github.com/blog/2011/11/23/this-week-in-skynet-no22/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="The PressGang CCMS Project" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">The PressGang CCMS Project</a></h1>
+  
+    <h2>The Open Source Content Component Management System for Topic-based Authoring</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:pressgang-ccms.github.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+	<li><a href="/">News</a></li>
+	<li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+<ul class="main-navigation">
+	<li><a href="/pages/getting_started">Get Started</a></li>
+	<li><a href="/pages/docs">Docs</a></li>
+	<li><a href="/pages/roadmap">Road Map</a></li>
+	<li><a href="/pages/source">Source</a></li>
+	<li><a href="/pages/bugs">Bugzilla</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">This Week in Skynet #23</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-11-23T15:33:00+10:00" pubdate data-updated="true">Nov 23<span>rd</span>, 2011</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>This week we upgraded to using HTTPS on the server and continued to extend the Zanata support.</p>
+
+<!-- MORE -->
+
+
+<h3>HTTPS Login</h3>
+
+<p>The login page now uses HTTPS. The certificate is not signed, so you will have to add the certificate in Firefox, or ignore the security warning in Chrome.</p>
+
+<h3>Continued Work on Zanata Integration</h3>
+
+<p>Work has continued on providing integration with Zanata. After a meeting with the Zanata guys I have had to expand Skynet&#8217;s role to address the following decisions:</p>
+
+<ul>
+<li>Skynet will be responsible for maintaining the state of a translation at a point in time (equivalent to downloading a PO file and checking it into an SVN repo)</li>
+<li>Skynet will provide the interface used by translators to view, sort and compare topics that have been translated</li>
+<li>Zanata will provide a fixed URL for editing a specific topic, which will appear in Skynet to allow translators to do the actual translations.</li>
+</ul>
+
+
+<p>Snapshots can now only be created from the main search screen. The tags and topic field filters are selected (as if you were going to build a DocBook ZIP file) and then a Snapshot is created, essentially freezing the state of the topics returned by the search fields.</p>
+
+<p><a href="/images/uploads/Screenshot-at-2011-11-29-17-46-42.png"><img src="/images/uploads/Screenshot-at-2011-11-29-17-46-42.png" title="Creating new snapshots from search" ></a></p>
+
+<p>Once created, Snapshots can be queried from their own search page.</p>
+
+<p><a href="/images/uploads/Screenshot-at-2011-11-29-17-47-09.png"><img src="/images/uploads/Screenshot-at-2011-11-29-17-47-09.png" title="Snapshots can be queried from their own search page" ></a></p>
+
+<p>The snapshot topics (either belonging to a specific revision, or just in the working state) can be queried just like regular topics, complete with grouping. In future it is likely that there will be a number of tags to represent translation priorities, which translators can use to organise their workflow.</p>
+
+<p><a href="/images/uploads/Screenshot-at-2011-11-29-17-40-56.png"><img src="/images/uploads/Screenshot-at-2011-11-29-17-40-56.png" title="Zanata IDs in Tags" ></a></p>
+
+<p>Snapshots now have the concept of a revision. A revision is kind of like a snapshot for a snapshot. When created, a revision will save the translation strings and the translated XML, allowing books to be recreated at a later point with a known translation set. When a snapshot is first created, an initial revision named &#8220;Initial Untranslated Revision&#8221; is created that reflects the untranslated state of the topics.</p>
+
+<p>In addition to revisions, translations can be pulled down into a working state. The working state represents the topics translated against the latest strings in Zanata. This gives translators the ability to view and compare translated documents without having to create a snapshot revision.</p>
+
+<p>There is still more work to be done, but I am hoping that I can get a working example uploaded by the end of the week, or maybe early next week.</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Matthew Casperson</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-11-23T15:33:00+10:00" pubdate data-updated="true">Nov 23<span>rd</span>, 2011</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/updates/'>updates</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://pressgang-ccms.github.com/blog/2011/11/23/this-week-in-skynet-no22/" data-via="" data-counturl="http://pressgang-ccms.github.com/blog/2011/11/23/this-week-in-skynet-no22/" >Tweet</a>
+  
+  
+  <div class="g-plusone" data-size="medium"></div>
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2011/11/21/this-week-in-skynet-no23/" title="Previous Post: This Week in Skynet #22">&laquo; This Week in Skynet #22</a>
+      
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>The PressGang CCMS</h1>
+  <p>PressgangCCMS is a web-based Component Content Management System (CCMS) written in Java.</p>
+  <p>It is open source and developed on JBoss Application Server 7.</p>
+  <a href="/pages/about">Read more...</a>
+</section>
+<section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2011/11/23/this-week-in-skynet-no22/">This Week in Skynet #23</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/11/21/this-week-in-skynet-no23/">This Week in Skynet #22</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/11/13/this-weekend-in-skynet/">This Weekend in Skynet</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2012 - The PressGang CCMS Project -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+      script.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
+    })();
+  </script>
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

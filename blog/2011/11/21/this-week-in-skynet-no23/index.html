@@ -1,0 +1,266 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>This Week in Skynet #22 - The PressGang CCMS Project</title>
+  <meta name="author" content="The PressGang CCMS Project">
+
+  
+  <meta name="description" content="This week has been all about integrating Skynet with Zanata. Integration with Zanata First, the concept of a Snapshot has been added to Skynet. A &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://pressgang-ccms.github.com/blog/2011/11/21/this-week-in-skynet-no23/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="The PressGang CCMS Project" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">The PressGang CCMS Project</a></h1>
+  
+    <h2>The Open Source Content Component Management System for Topic-based Authoring</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:pressgang-ccms.github.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+	<li><a href="/">News</a></li>
+	<li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+<ul class="main-navigation">
+	<li><a href="/pages/getting_started">Get Started</a></li>
+	<li><a href="/pages/docs">Docs</a></li>
+	<li><a href="/pages/roadmap">Road Map</a></li>
+	<li><a href="/pages/source">Source</a></li>
+	<li><a href="/pages/bugs">Bugzilla</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">This Week in Skynet #22</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-11-21T08:33:00+10:00" pubdate data-updated="true">Nov 21<span>st</span>, 2011</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>This week has been all about integrating Skynet with Zanata.</p>
+
+<!-- MORE -->
+
+
+<h3>Integration with Zanata</h3>
+
+<p>First, the concept of a Snapshot has been added to Skynet. A Snapshot captures the state of a collection of topics that are returned by a filtered search. It is intended to be used to save significant milestones or releases, such as beta releases or GA releases.</p>
+
+<p>To create a snapshot you first select the tags and field filter options that would return the topics that represent a significant release. You then select the Snapshots tab, enter a new for the new Snapshot, and click Save.</p>
+
+<blockquote><p>Once a Snapshot has been created, it can not be modified or deleted. So make sure that all the topics are OK before creating a Snapshot, because if any topics have invalid XML they can not be translated or included in the Docbook output, and the XML can not be changed.</p></blockquote>
+
+
+<p><a href="/images/uploads/skynet1.png"><img src="/images/uploads/skynet1.png" title="untitled" ></a></p>
+
+<p>When the Snapshot has been created, you can push the Topics to Zanata using the Push All To Zanata button. Zanata does not understand the concept of a Topic, so as a work around a Zanata project called Skynet is created, and each revision of a topic is uploaded as a separate file.</p>
+
+<p><a href="/images/uploads/skynet2.png"><img src="/images/uploads/skynet2.png" title="untitled" ></a></p>
+
+<p><a href="/images/uploads/skynet3.png"><img src="/images/uploads/skynet3.png" title="untitled" ></a></p>
+
+<p>When a translation has been completed, click the Pull All From Zanata button. This will pull down the translated strings, and apply them to the Snapshot topics.</p>
+
+<p><a href="/images/uploads/skynet4.png"><img src="/images/uploads/skynet4.png" title="untitled" ></a></p>
+
+<p>The translated version of the topics can then be previewed using the View Topic button.</p>
+
+<p><a href="/images/uploads/skynet5.png"><img src="/images/uploads/skynet5.png" title="untitled" ></a></p>
+
+<p>There is still a lot lot be done (including dealing with injection points, building a Docbook ZIP file from a Snapshot, prioritising topics for translation to name a few), but as a proof of concept this work paves the way for further integration between Skynet and Zanata.</p>
+
+<p>For the technically inclined, the <a href="https://sourceforge.net/p/topicindex/code/425/tree/trunk/WebContent/WEB-INF/lib/zanatarest.jar">zanatarest.jar</a> file contains the Java classes required to use the Zanata REST interface directly via a <a href="http://docs.jboss.org/resteasy/2.0.0.GA/userguide/html/RESTEasy_Client_Framework.html#Sharing_interfaces">RESTeasy client</a>.</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Matthew Casperson</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-11-21T08:33:00+10:00" pubdate data-updated="true">Nov 21<span>st</span>, 2011</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/updates/'>updates</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://pressgang-ccms.github.com/blog/2011/11/21/this-week-in-skynet-no23/" data-via="" data-counturl="http://pressgang-ccms.github.com/blog/2011/11/21/this-week-in-skynet-no23/" >Tweet</a>
+  
+  
+  <div class="g-plusone" data-size="medium"></div>
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2011/11/13/this-weekend-in-skynet/" title="Previous Post: This Weekend in Skynet">&laquo; This Weekend in Skynet</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2011/11/23/this-week-in-skynet-no22/" title="Next Post: This Week in Skynet #23">This Week in Skynet #23 &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>The PressGang CCMS</h1>
+  <p>PressgangCCMS is a web-based Component Content Management System (CCMS) written in Java.</p>
+  <p>It is open source and developed on JBoss Application Server 7.</p>
+  <a href="/pages/about">Read more...</a>
+</section>
+<section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2011/11/23/this-week-in-skynet-no22/">This Week in Skynet #23</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/11/21/this-week-in-skynet-no23/">This Week in Skynet #22</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/11/13/this-weekend-in-skynet/">This Weekend in Skynet</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2012 - The PressGang CCMS Project -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+      script.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
+    })();
+  </script>
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>
