@@ -4,7 +4,7 @@
   <title><![CDATA[Category: updates | The PressGang CCMS Project]]></title>
   <link href="http://pressgang-ccms.github.com/blog/categories/updates/atom.xml" rel="self"/>
   <link href="http://pressgang-ccms.github.com/"/>
-  <updated>2012-11-26T12:38:40+10:00</updated>
+  <updated>2012-11-26T13:33:28+10:00</updated>
   <id>http://pressgang-ccms.github.com/</id>
   <author>
     <name><![CDATA[The PressGang CCMS Project]]></name>
@@ -12,6 +12,46 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Bugfixes]]></title>
+    <link href="http://pressgang-ccms.github.com/blog/2012/11/13/Bugfixes/"/>
+    <updated>2012-11-13T12:04:00+10:00</updated>
+    <id>http://pressgang-ccms.github.com/blog/2012/11/13/Bugfixes</id>
+    <content type="html"><![CDATA[<p>I applied a minor bug fix release last night to the PressGang servers. Fixes are as follows:</p>
+
+<ul>
+<li>Fixed the Double Login Issue. See Bug #867507</li>
+<li>Fixed an issue where the Topic XML Editor wouldn't display when switching tabs.</li>
+<li>Fixed an issue with pushing Translations to Zanata.</li>
+<li>Fixed an issue where Converstions weren't being ended when an error was thrown.</li>
+<li>Fixed an issue where entering an invalid topic Id in the Quick Select box would just cause the page to reload. It now will display the  Angry Terminator.</li>
+<li>Fixed an issue where the REST Server would throw an NPE when expanding LogDetails.</li>
+<li>Fixed an issue where the Project Description Query parameter wouldn't work.</li>
+</ul>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Changes to Translation Workflow]]></title>
+    <link href="http://pressgang-ccms.github.com/blog/2012/11/12/change-to-translation-workflow/"/>
+    <updated>2012-11-12T13:06:00+10:00</updated>
+    <id>http://pressgang-ccms.github.com/blog/2012/11/12/change-to-translation-workflow</id>
+    <content type="html"><![CDATA[<p>The short version.</p>
+
+<p>With the release of Zanata 2.0 it is now no longer necessary to run copytrans when pushing topics to Zanata. Topics will reuse the translations from previous revisions (if available) automatically. It is still good practice to notify translators of new topic revisions, but there is no longer any need to request copytrans be run.</p>
+
+<!-- MORE -->
+
+
+<p>The long version.</p>
+
+<p>Prior to Zanata 2.0 only Zanata documents (topics are considered documents by Zanata) that were in the same project and that had the same file name would reuse translations from the older versions of the documents. Since CCMS topics in Zanata are identified by a revision number, each revision had a different file name, and this meant that there was no automatic reuse of prior translations. The only way around this was to manually run copytrans, which would prepopulate translations for all documents in a project. Hence the previous requirement to request that copytrans be run when new topics were pushed into Zanata.</p>
+
+<p>Zanata 2.0 now has the ability to reuse translations according to a flexible set of rules, which now allows CCMS topics to be prepopulated with existing translations when they are pushed into the system. There is nothing that writers or translators need to do take advantage of this new feature; it is implemented as a standard part of the process when pushing topics into Zanata.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[This Week in Skynet #23]]></title>

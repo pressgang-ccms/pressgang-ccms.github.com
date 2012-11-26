@@ -5,12 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>The PressGang CCMS Project</title>
+  <title>Changes to Translation Workflow - The PressGang CCMS Project</title>
   <meta name="author" content="The PressGang CCMS Project">
 
   
-  <meta name="description" content="I applied a minor bug fix release last night to the PressGang servers. Fixes are as follows: Fixed the Double Login Issue. See Bug #867507
-Fixed an &hellip;">
+  <meta name="description" content="The short version. With the release of Zanata 2.0 it is now no longer necessary to run copytrans when pushing topics to Zanata. Topics will reuse the &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -19,7 +18,7 @@ Fixed an &hellip;">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://pressgang-ccms.github.com/">
+  <link rel="canonical" href="http://pressgang-ccms.github.com/blog/2012/11/12/change-to-translation-workflow/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -71,62 +70,12 @@ Fixed an &hellip;">
 </nav>
   <div id="main">
     <div id="content">
-      <div class="blog-index">
+      <div>
+<article class="hentry" role="article">
   
-  
-  
-    <article>
-      
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2012/11/13/Bugfixes/">Bugfixes</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-11-13T12:04:00+10:00" pubdate data-updated="true">Nov 13<span>th</span>, 2012</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>I applied a minor bug fix release last night to the PressGang servers. Fixes are as follows:</p>
-
-<ul>
-<li>Fixed the Double Login Issue. See Bug #867507</li>
-<li>Fixed an issue where the Topic XML Editor wouldn&#8217;t display when switching tabs.</li>
-<li>Fixed an issue with pushing Translations to Zanata.</li>
-<li>Fixed an issue where Converstions weren&#8217;t being ended when an error was thrown.</li>
-<li>Fixed an issue where entering an invalid topic Id in the Quick Select box would just cause the page to reload. It now will display the  Angry Terminator.</li>
-<li>Fixed an issue where the REST Server would throw an NPE when expanding LogDetails.</li>
-<li>Fixed an issue where the Project Description Query parameter wouldn&#8217;t work.</li>
-</ul>
-
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/11/12/change-to-translation-workflow/">Changes to Translation Workflow</a></h1>
+      <h1 class="entry-title">Changes to Translation Workflow</h1>
     
     
       <p class="meta">
@@ -149,72 +98,29 @@ Fixed an &hellip;">
   </header>
 
 
-  <div class="entry-content"><p>The short version.</p>
+<div class="entry-content"><p>The short version.</p>
 
 <p>With the release of Zanata 2.0 it is now no longer necessary to run copytrans when pushing topics to Zanata. Topics will reuse the translations from previous revisions (if available) automatically. It is still good practice to notify translators of new topic revisions, but there is no longer any need to request copytrans be run.</p>
 
+<!-- MORE -->
+
+
+<p>The long version.</p>
+
+<p>Prior to Zanata 2.0 only Zanata documents (topics are considered documents by Zanata) that were in the same project and that had the same file name would reuse translations from the older versions of the documents. Since CCMS topics in Zanata are identified by a revision number, each revision had a different file name, and this meant that there was no automatic reuse of prior translations. The only way around this was to manually run copytrans, which would prepopulate translations for all documents in a project. Hence the previous requirement to request that copytrans be run when new topics were pushed into Zanata.</p>
+
+<p>Zanata 2.0 now has the ability to reuse translations according to a flexible set of rules, which now allows CCMS topics to be prepopulated with existing translations when they are pushed into the system. There is nothing that writers or translators need to do take advantage of this new feature; it is implemented as a standard part of the process when pushing topics into Zanata.</p>
 </div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2012/11/12/change-to-translation-workflow/">Read on &rarr;</a>
-    </footer>
-  
 
 
-    </article>
-  
-  
-    <article>
+  <footer>
+    <p class="meta">
       
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2011/11/23/this-week-in-skynet-no22/">This Week in Skynet #23</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
   
 
+<span class="byline author vcard">Posted by <span class="fn">Matthew Casperson</span></span>
 
-<time datetime="2011-11-23T15:33:00+10:00" pubdate data-updated="true">Nov 23<span>rd</span>, 2011</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>This week we upgraded to using HTTPS on the server and continued to extend the Zanata support.</p>
-
-</div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2011/11/23/this-week-in-skynet-no22/">Read on &rarr;</a>
-    </footer>
-  
-
-
-    </article>
-  
-  
-    <article>
       
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2011/11/21/this-week-in-skynet-no23/">This Week in Skynet #22</a></h1>
-    
-    
-      <p class="meta">
-        
 
 
 
@@ -226,80 +132,49 @@ Fixed an &hellip;">
   
 
 
-<time datetime="2011-11-21T08:33:00+10:00" pubdate data-updated="true">Nov 21<span>st</span>, 2011</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>This week has been all about integrating Skynet with Zanata.</p>
-
-</div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2011/11/21/this-week-in-skynet-no23/">Read on &rarr;</a>
-    </footer>
-  
-
-
-    </article>
-  
-  
-    <article>
+<time datetime="2012-11-12T13:06:00+10:00" pubdate data-updated="true">Nov 12<span>th</span>, 2012</time>
       
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2011/11/13/this-weekend-in-skynet/">This Weekend in Skynet</a></h1>
-    
-    
-      <p class="meta">
-        
 
-
-
-
-
-
-
-
+<span class="categories">
   
+    <a class='category' href='/blog/categories/translation/'>translation</a>, <a class='category' href='/blog/categories/updates/'>updates</a>
+  
+</span>
 
 
-<time datetime="2011-11-13T08:39:00+10:00" pubdate data-updated="true">Nov 13<span>th</span>, 2011</time>
-        
-      </p>
+    </p>
     
-  </header>
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://pressgang-ccms.github.com/blog/2012/11/12/change-to-translation-workflow/" data-via="" data-counturl="http://pressgang-ccms.github.com/blog/2012/11/12/change-to-translation-workflow/" >Tweet</a>
+  
+  
+  <div class="g-plusone" data-size="medium"></div>
+  
+  
+</div>
 
-
-  <div class="entry-content"><p>A busy weekend has added grouping to search results.</p>
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2011/11/23/this-week-in-skynet-no22/" title="Previous Post: This Week in Skynet #23">&laquo; This Week in Skynet #23</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2012/11/13/Bugfixes/" title="Next Post: Bugfixes">Bugfixes &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
 
 </div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2011/11/13/this-weekend-in-skynet/">Read on &rarr;</a>
-    </footer>
-  
 
-
-    </article>
-  
-  <div class="pagination">
-    
-    <a href="/blog/archives">Blog Archives</a>
-    
-  </div>
-</div>
 <aside class="sidebar">
   
     <section>
   <h1>The PressGang CCMS</h1>
   <p>PressgangCCMS is a web-based Component Content Management System (CCMS) written in Java.</p>
   <p>It is open source and developed on JBoss Application Server 7.</p>
-  <a href="/pages/about">Read more&#8230;</a>
+  <a href="/pages/about">Read more...</a>
 </section>
 <section>
   <h1>Recent Posts</h1>
@@ -334,6 +209,7 @@ Fixed an &hellip;">
 
   
 </aside>
+
 
     </div>
   </div>
