@@ -4,7 +4,7 @@
   <title><![CDATA[The PressGang CCMS Project]]></title>
   <link href="http://pressgang-ccms.github.com/atom.xml" rel="self"/>
   <link href="http://pressgang-ccms.github.com/"/>
-  <updated>2012-11-26T13:33:28+10:00</updated>
+  <updated>2012-11-26T17:21:25+10:00</updated>
   <id>http://pressgang-ccms.github.com/</id>
   <author>
     <name><![CDATA[The PressGang CCMS Project]]></name>
@@ -21,7 +21,7 @@
     <content type="html"><![CDATA[<p>I applied a minor bug fix release last night to the PressGang servers. Fixes are as follows:</p>
 
 <ul>
-<li>Fixed the Double Login Issue. See Bug #867507</li>
+<li>Fixed the Double Login Issue. See <a href="http://bugzilla.redhat.com/show_bug.cgi?id=867507">BZ#867507</a></li>
 <li>Fixed an issue where the Topic XML Editor wouldn&#8217;t display when switching tabs.</li>
 <li>Fixed an issue with pushing Translations to Zanata.</li>
 <li>Fixed an issue where Converstions weren&#8217;t being ended when an error was thrown.</li>
