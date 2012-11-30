@@ -9,8 +9,9 @@
   <meta name="author" content="The PressGang CCMS Project">
 
   
-  <meta name="description" content="I applied a minor bug fix release last night to the PressGang servers. Fixes are as follows: Fixed the Double Login Issue. See BZ#867507
-Fixed an &hellip;">
+  <meta name="description" content="Upgraded Hibernate from 3.6.8 to 3.6.10
+Fixed database collations to correctly use UTF8 instead of latin1. Fix for BZ#857183.
+Removed old database &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -73,6 +74,66 @@ Fixed an &hellip;">
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/11/30/updates/">Updates</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-11-30T09:30:00+10:00" pubdate data-updated="true">Nov 30<span>th</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><ul>
+<li>Upgraded Hibernate from 3.6.8 to 3.6.10</li>
+<li>Fixed database collations to correctly use UTF8 instead of latin1. Fix for <a href="http://bugzilla.redhat.com/show_bug.cgi?id=857183">BZ#857183</a>.</li>
+<li>Removed old database tables that were no longer being used.</li>
+<li>Fixed some spelling mistakes on database table columns.</li>
+<li>Fixed an issue that was causing Image revisions not to be saved.</li>
+<li>Added the Timestamp field to the log table on the Topic View page.</li>
+<li>Re-implemented the back-end querying. This was primarily done to fix <a href="http://bugzilla.redhat.com/show_bug.cgi?id=837993">BZ#837993</a> and <a href="http://bugzilla.redhat.com/show_bug.cgi?id=869459">BZ#869459</a>.</li>
+<li>Fixed an issue that would cause the session to disconnect with the database upon some errors. See <a href="http://bugzilla.redhat.com/show_bug.cgi?id=869623">BZ#869623</a>.</li>
+<li>Fixed an issue that was causing log messages to not be set when using anything but the REST Easy client code. See <a href="http://bugzilla.redhat.com/show_bug.cgi?id=879412">BZ#879412</a>.</li>
+<li>Updated how logging is used via the REST API. It no longer takes in a <code>RESTLogDetails</code> object and instead has three query parameters: <code>message</code>, <code>flag</code> and <code>userId</code>. All parameters are optional.</li>
+<li>Fixed the XML endpoints to include the doctype definitions. To go with this a doctype is now associated with all topics, however Docbook 4.5 is the only supported option so it can&#8217;t be set when creating a topic. See <a href="http://bugzilla.redhat.com/show_bug.cgi?id=869129">BZ#869129</a>.</li>
+<li>Some optimisation on the REST endpoints to help speed up requests.</li>
+<li>Added server GUI monitoring tools, viewable only by admins.</li>
+<li>Fixed some bugs found in the REST API during the new GUI testing.</li>
+<li>Changed the IA account password to encourage users to use their kerberos account.</li>
+<li>Added new REST endpoints:
+
+<ul>
+<li>All primary JSON endpoints that don&#8217;t return a collection, now have a revision endpoint. eg <code>/rest/1/tag/get/json/&lt;ID&gt;/r/&lt;REVISION&gt;</code></li>
+<li>Added a RAW image endpoint that will return the image data directly. eg <code>/rest/1/image/get/raw/10</code></li>
+</ul>
+</li>
+</ul>
+
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -306,6 +367,10 @@ Fixed an &hellip;">
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2012/11/30/updates/">Updates</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2012/11/13/Bugfixes/">Bugfixes</a>
       </li>
     
@@ -319,10 +384,6 @@ Fixed an &hellip;">
     
       <li class="post">
         <a href="/blog/2011/11/21/this-week-in-skynet-no23/">This Week in Skynet #22</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2011/11/13/this-weekend-in-skynet/">This Weekend in Skynet</a>
       </li>
     
   </ul>

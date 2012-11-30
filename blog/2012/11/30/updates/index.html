@@ -5,12 +5,13 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Bugfixes - The PressGang CCMS Project</title>
+  <title>Updates - The PressGang CCMS Project</title>
   <meta name="author" content="The PressGang CCMS Project">
 
   
-  <meta name="description" content="I applied a minor bug fix release last night to the PressGang servers. Fixes are as follows: Fixed the Double Login Issue. See BZ#867507
-Fixed an &hellip;">
+  <meta name="description" content="Upgraded Hibernate from 3.6.8 to 3.6.10
+Fixed database collations to correctly use UTF8 instead of latin1. Fix for BZ#857183.
+Removed old database &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -19,7 +20,7 @@ Fixed an &hellip;">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://pressgang-ccms.github.com/blog/2012/11/13/Bugfixes/">
+  <link rel="canonical" href="http://pressgang-ccms.github.com/blog/2012/11/30/updates/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -76,7 +77,7 @@ Fixed an &hellip;">
   
   <header>
     
-      <h1 class="entry-title">Bugfixes</h1>
+      <h1 class="entry-title">Updates</h1>
     
     
       <p class="meta">
@@ -92,23 +93,36 @@ Fixed an &hellip;">
   
 
 
-<time datetime="2012-11-13T12:04:00+10:00" pubdate data-updated="true">Nov 13<span>th</span>, 2012</time>
+<time datetime="2012-11-30T09:30:00+10:00" pubdate data-updated="true">Nov 30<span>th</span>, 2012</time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><p>I applied a minor bug fix release last night to the PressGang servers. Fixes are as follows:</p>
+<div class="entry-content"><ul>
+<li>Upgraded Hibernate from 3.6.8 to 3.6.10</li>
+<li>Fixed database collations to correctly use UTF8 instead of latin1. Fix for <a href="http://bugzilla.redhat.com/show_bug.cgi?id=857183">BZ#857183</a>.</li>
+<li>Removed old database tables that were no longer being used.</li>
+<li>Fixed some spelling mistakes on database table columns.</li>
+<li>Fixed an issue that was causing Image revisions not to be saved.</li>
+<li>Added the Timestamp field to the log table on the Topic View page.</li>
+<li>Re-implemented the back-end querying. This was primarily done to fix <a href="http://bugzilla.redhat.com/show_bug.cgi?id=837993">BZ#837993</a> and <a href="http://bugzilla.redhat.com/show_bug.cgi?id=869459">BZ#869459</a>.</li>
+<li>Fixed an issue that would cause the session to disconnect with the database upon some errors. See <a href="http://bugzilla.redhat.com/show_bug.cgi?id=869623">BZ#869623</a>.</li>
+<li>Fixed an issue that was causing log messages to not be set when using anything but the REST Easy client code. See <a href="http://bugzilla.redhat.com/show_bug.cgi?id=879412">BZ#879412</a>.</li>
+<li>Updated how logging is used via the REST API. It no longer takes in a <code>RESTLogDetails</code> object and instead has three query parameters: <code>message</code>, <code>flag</code> and <code>userId</code>. All parameters are optional.</li>
+<li>Fixed the XML endpoints to include the doctype definitions. To go with this a doctype is now associated with all topics, however Docbook 4.5 is the only supported option so it can&#8217;t be set when creating a topic. See <a href="http://bugzilla.redhat.com/show_bug.cgi?id=869129">BZ#869129</a>.</li>
+<li>Some optimisation on the REST endpoints to help speed up requests.</li>
+<li>Added server GUI monitoring tools, viewable only by admins.</li>
+<li>Fixed some bugs found in the REST API during the new GUI testing.</li>
+<li>Changed the IA account password to encourage users to use their kerberos account.</li>
+<li>Added new REST endpoints:
 
 <ul>
-<li>Fixed the Double Login Issue. See <a href="http://bugzilla.redhat.com/show_bug.cgi?id=867507">BZ#867507</a></li>
-<li>Fixed an issue where the Topic XML Editor wouldn&#8217;t display when switching tabs.</li>
-<li>Fixed an issue with pushing Translations to Zanata.</li>
-<li>Fixed an issue where Converstions weren&#8217;t being ended when an error was thrown.</li>
-<li>Fixed an issue where entering an invalid topic Id in the Quick Select box would just cause the page to reload. It now will display the  Angry Terminator.</li>
-<li>Fixed an issue where the REST Server would throw an NPE when expanding LogDetails.</li>
-<li>Fixed an issue where the Project Description Query parameter wouldn&#8217;t work.</li>
+<li>All primary JSON endpoints that don&#8217;t return a collection, now have a revision endpoint. eg <code>/rest/1/tag/get/json/&lt;ID&gt;/r/&lt;REVISION&gt;</code></li>
+<li>Added a RAW image endpoint that will return the image data directly. eg <code>/rest/1/image/get/raw/10</code></li>
+</ul>
+</li>
 </ul>
 
 </div>
@@ -133,7 +147,7 @@ Fixed an &hellip;">
   
 
 
-<time datetime="2012-11-13T12:04:00+10:00" pubdate data-updated="true">Nov 13<span>th</span>, 2012</time>
+<time datetime="2012-11-30T09:30:00+10:00" pubdate data-updated="true">Nov 30<span>th</span>, 2012</time>
       
 
 <span class="categories">
@@ -147,7 +161,7 @@ Fixed an &hellip;">
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://pressgang-ccms.github.com/blog/2012/11/13/Bugfixes/" data-via="" data-counturl="http://pressgang-ccms.github.com/blog/2012/11/13/Bugfixes/" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://pressgang-ccms.github.com/blog/2012/11/30/updates/" data-via="" data-counturl="http://pressgang-ccms.github.com/blog/2012/11/30/updates/" >Tweet</a>
   
   
   <div class="g-plusone" data-size="medium"></div>
@@ -158,10 +172,8 @@ Fixed an &hellip;">
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2012/11/12/change-to-translation-workflow/" title="Previous Post: Changes to Translation Workflow">&laquo; Changes to Translation Workflow</a>
+        <a class="basic-alignment left" href="/blog/2012/11/13/Bugfixes/" title="Previous Post: Bugfixes">&laquo; Bugfixes</a>
       
-      
-        <a class="basic-alignment right" href="/blog/2012/11/30/updates/" title="Next Post: Updates">Updates &raquo;</a>
       
     </p>
   </footer>

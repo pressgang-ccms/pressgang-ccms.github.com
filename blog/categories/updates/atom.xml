@@ -4,7 +4,7 @@
   <title><![CDATA[Category: updates | The PressGang CCMS Project]]></title>
   <link href="http://pressgang-ccms.github.com/blog/categories/updates/atom.xml" rel="self"/>
   <link href="http://pressgang-ccms.github.com/"/>
-  <updated>2012-11-26T17:21:25+10:00</updated>
+  <updated>2012-11-30T10:18:32+10:00</updated>
   <id>http://pressgang-ccms.github.com/</id>
   <author>
     <name><![CDATA[The PressGang CCMS Project]]></name>
@@ -12,6 +12,39 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Updates]]></title>
+    <link href="http://pressgang-ccms.github.com/blog/2012/11/30/updates/"/>
+    <updated>2012-11-30T09:30:00+10:00</updated>
+    <id>http://pressgang-ccms.github.com/blog/2012/11/30/updates</id>
+    <content type="html"><![CDATA[<ul>
+<li>Upgraded Hibernate from 3.6.8 to 3.6.10</li>
+<li>Fixed database collations to correctly use UTF8 instead of latin1. Fix for <a href="http://bugzilla.redhat.com/show_bug.cgi?id=857183">BZ#857183</a>.</li>
+<li>Removed old database tables that were no longer being used.</li>
+<li>Fixed some spelling mistakes on database table columns.</li>
+<li>Fixed an issue that was causing Image revisions not to be saved.</li>
+<li>Added the Timestamp field to the log table on the Topic View page.</li>
+<li>Re-implemented the back-end querying. This was primarily done to fix <a href="http://bugzilla.redhat.com/show_bug.cgi?id=837993">BZ#837993</a> and <a href="http://bugzilla.redhat.com/show_bug.cgi?id=869459">BZ#869459</a>.</li>
+<li>Fixed an issue that would cause the session to disconnect with the database upon some errors. See <a href="http://bugzilla.redhat.com/show_bug.cgi?id=869623">BZ#869623</a>.</li>
+<li>Fixed an issue that was causing log messages to not be set when using anything but the REST Easy client code. See <a href="http://bugzilla.redhat.com/show_bug.cgi?id=879412">BZ#879412</a>.</li>
+<li>Updated how logging is used via the REST API. It no longer takes in a <code>RESTLogDetails</code> object and instead has three query parameters: <code>message</code>, <code>flag</code> and <code>userId</code>. All parameters are optional.</li>
+<li>Fixed the XML endpoints to include the doctype definitions. To go with this a doctype is now associated with all topics, however Docbook 4.5 is the only supported option so it can't be set when creating a topic. See <a href="http://bugzilla.redhat.com/show_bug.cgi?id=869129">BZ#869129</a>.</li>
+<li>Some optimisation on the REST endpoints to help speed up requests.</li>
+<li>Added server GUI monitoring tools, viewable only by admins.</li>
+<li>Fixed some bugs found in the REST API during the new GUI testing.</li>
+<li>Changed the IA account password to encourage users to use their kerberos account.</li>
+<li>Added new REST endpoints:
+
+<ul>
+<li>All primary JSON endpoints that don't return a collection, now have a revision endpoint. eg <code>/rest/1/tag/get/json/&lt;ID&gt;/r/&lt;REVISION&gt;</code></li>
+<li>Added a RAW image endpoint that will return the image data directly. eg <code>/rest/1/image/get/raw/10</code></li>
+</ul>
+</li>
+</ul>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Bugfixes]]></title>
@@ -135,40 +168,6 @@
 <p>There is still a lot lot be done (including dealing with injection points, building a Docbook ZIP file from a Snapshot, prioritising topics for translation to name a few), but as a proof of concept this work paves the way for further integration between Skynet and Zanata.</p>
 
 <p>For the technically inclined, the <a href="https://sourceforge.net/p/topicindex/code/425/tree/trunk/WebContent/WEB-INF/lib/zanatarest.jar">zanatarest.jar</a> file contains the Java classes required to use the Zanata REST interface directly via a <a href="http://docs.jboss.org/resteasy/2.0.0.GA/userguide/html/RESTEasy_Client_Framework.html#Sharing_interfaces">RESTeasy client</a>.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[This Weekend in Skynet]]></title>
-    <link href="http://pressgang-ccms.github.com/blog/2011/11/13/this-weekend-in-skynet/"/>
-    <updated>2011-11-13T08:39:00+10:00</updated>
-    <id>http://pressgang-ccms.github.com/blog/2011/11/13/this-weekend-in-skynet</id>
-    <content type="html"><![CDATA[<p>A busy weekend has added grouping to search results.</p>
-
-<!-- MORE -->
-
-
-<h3>Grouped Topic Searches</h3>
-
-<p>Search results can now be grouped. The main search screen has a new column next to the tags labelled Grp. Any tag with the Grp (or grouping) checkbox selected will be used to group the search result.</p>
-
-<p><a href="/images/uploads/untitled.png"><img src="/images/uploads/untitled.png" title="untitled" ></a></p>
-
-<p>On the search screen each grouping tag is represented by a tab. These tabs list all the topics that match the filter AND include the grouping tag. This means that a topic might be listed more than once under different tabs.</p>
-
-<p><a href="/images/uploads/2.png"><img src="/images/uploads/2.png" title="untitled" ></a></p>
-
-<p>Topics that don't include any of the grouping tags will be listed under a tab called Ungrouped Results. This means that, when using grouping, all topics that would have been returned by the filter are listed at least once under once of the tabs, and possibly more than once.</p>
-
-<p><a href="/images/uploads/3.png"><img src="/images/uploads/3.png" title="untitled" ></a></p>
-
-<p>All group operations, such as bulk tagging or group relationship modifications, are performed on all the topics, and not just those in the currently selected tab.</p>
-
-<h3>Exception Logging</h3>
-
-<p>All exceptions are now logged to the database. This should allow me to monitor occurrences of the angry terminator, and hopefully resolve these kinds of issues in a more timely fashion.</p>
-
-<p><a href="/images/uploads/4.png"><img src="/images/uploads/4.png" title="untitled" ></a></p>
 ]]></content>
   </entry>
   
