@@ -1,439 +1,72 @@
-
 <!DOCTYPE html>
-<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
-<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
-<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
-<head>
-  <meta charset="utf-8">
-  <title>The PressGang CCMS Project</title>
-  <meta name="author" content="The PressGang CCMS Project">
+<html>
 
-  
-  <meta name="description" content="Upgraded Hibernate from 3.6.8 to 3.6.10
-Fixed database collations to correctly use UTF8 instead of latin1. Fix for BZ#857183.
-Removed old database &hellip;">
-  
+  <head>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="PressGang CCMS : Open Source, API-Driven Documentation Design, Writing, and Illustration Platform" />
 
-  <!-- http://t.co/dKP3o1e -->
-  <meta name="HandheldFriendly" content="True">
-  <meta name="MobileOptimized" content="320">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
 
-  
-  <link rel="canonical" href="http://pressgang-ccms.github.com/">
-  <link href="/favicon.png" rel="icon">
-  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
-  <script src="/javascripts/modernizr-2.0.js"></script>
-  <script src="/javascripts/ender.js"></script>
-  <script src="/javascripts/octopress.js" type="text/javascript"></script>
-  <link href="/atom.xml" rel="alternate" title="The PressGang CCMS Project" type="application/atom+xml">
-  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
-<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
-<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+    <title>PressGang CCMS</title>
+  </head>
 
-  
+  <body>
 
-</head>
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/pressgang-ccms">View on GitHub</a>
 
-<body   >
-  <header role="banner"><hgroup>
-  <h1><a href="/">The PressGang CCMS Project</a></h1>
-  
-    <h2>The Open Source Content Component Management System for Topic-based Authoring</h2>
-  
-</hgroup>
+          <h1 id="project_title">PressGang CCMS</h1>
+          <h2 id="project_tagline">Open Source, API-Driven Documentation Design, Writing, and Illustration Platform</h2>
 
-</header>
-  <nav role="navigation"><ul class="subscription" data-subscription="rss">
-  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
-  
-</ul>
-  
-<form action="http://google.com/search" method="get">
-  <fieldset role="search">
-    <input type="hidden" name="q" value="site:pressgang-ccms.github.com" />
-    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
-  </fieldset>
-</form>
-  
-<ul class="main-navigation">
-	<li><a href="/">News</a></li>
-	<li><a href="/blog/archives">Archives</a></li>
-</ul>
-
-<ul class="main-navigation">
-	<li><a href="/pages/getting_started">Get Started</a></li>
-	<li><a href="/pages/docs">Docs</a></li>
-	<li><a href="/pages/roadmap">Road Map</a></li>
-	<li><a href="/pages/source">Projects</a></li>
-	<li><a href="/pages/bugs">Bugtracker</a></li>
-</ul>
-
-</nav>
-  <div id="main">
-    <div id="content">
-      <div class="blog-index">
-  
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/11/30/updates/">Updates</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-11-30T09:30:00+10:00" pubdate data-updated="true">Nov 30<span>th</span>, 2012</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><ul>
-<li>Upgraded Hibernate from 3.6.8 to 3.6.10</li>
-<li>Fixed database collations to correctly use UTF8 instead of latin1. Fix for <a href="http://bugzilla.redhat.com/show_bug.cgi?id=857183">BZ#857183</a>.</li>
-<li>Removed old database tables that were no longer being used.</li>
-<li>Fixed some spelling mistakes on database table columns.</li>
-<li>Fixed an issue that was causing Image revisions not to be saved.</li>
-<li>Added the Timestamp field to the log table on the Topic View page.</li>
-<li>Re-implemented the back-end querying. This was primarily done to fix <a href="http://bugzilla.redhat.com/show_bug.cgi?id=837993">BZ#837993</a> and <a href="http://bugzilla.redhat.com/show_bug.cgi?id=869459">BZ#869459</a>.</li>
-<li>Fixed an issue that would cause the session to disconnect with the database upon some errors. See <a href="http://bugzilla.redhat.com/show_bug.cgi?id=869623">BZ#869623</a>.</li>
-<li>Fixed an issue that was causing log messages to not be set when using anything but the REST Easy client code. See <a href="http://bugzilla.redhat.com/show_bug.cgi?id=879412">BZ#879412</a>.</li>
-<li>Updated how logging is used via the REST API. It no longer takes in a <code>RESTLogDetails</code> object and instead has three query parameters: <code>message</code>, <code>flag</code> and <code>userId</code>. All parameters are optional.</li>
-<li>Fixed the XML endpoints to include the doctype definitions. To go with this a doctype is now associated with all topics, however Docbook 4.5 is the only supported option so it can&#8217;t be set when creating a topic. See <a href="http://bugzilla.redhat.com/show_bug.cgi?id=869129">BZ#869129</a>.</li>
-<li>Some optimisation on the REST endpoints to help speed up requests.</li>
-<li>Added server GUI monitoring tools, viewable only by admins.</li>
-<li>Fixed some bugs found in the REST API during the new GUI testing.</li>
-<li>Changed the IA account password to encourage users to use their kerberos account.</li>
-<li>Added new REST endpoints:
-
-<ul>
-<li>All primary JSON endpoints that don&#8217;t return a collection, now have a revision endpoint. eg <code>/rest/1/tag/get/json/&lt;ID&gt;/r/&lt;REVISION&gt;</code></li>
-<li>Added a RAW image endpoint that will return the image data directly. eg <code>/rest/1/image/get/raw/10</code></li>
-</ul>
-</li>
-</ul>
-
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/11/13/Bugfixes/">Bugfixes</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-11-13T12:04:00+10:00" pubdate data-updated="true">Nov 13<span>th</span>, 2012</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>I applied a minor bug fix release last night to the PressGang servers. Fixes are as follows:</p>
-
-<ul>
-<li>Fixed the Double Login Issue. See <a href="http://bugzilla.redhat.com/show_bug.cgi?id=867507">BZ#867507</a></li>
-<li>Fixed an issue where the Topic XML Editor wouldn&#8217;t display when switching tabs.</li>
-<li>Fixed an issue with pushing Translations to Zanata.</li>
-<li>Fixed an issue where Converstions weren&#8217;t being ended when an error was thrown.</li>
-<li>Fixed an issue where entering an invalid topic Id in the Quick Select box would just cause the page to reload. It now will display the  Angry Terminator.</li>
-<li>Fixed an issue where the REST Server would throw an NPE when expanding LogDetails.</li>
-<li>Fixed an issue where the Project Description Query parameter wouldn&#8217;t work.</li>
-</ul>
-
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/11/12/change-to-translation-workflow/">Changes to Translation Workflow</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-11-12T13:06:00+10:00" pubdate data-updated="true">Nov 12<span>th</span>, 2012</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>The short version.</p>
-
-<p>With the release of Zanata 2.0 it is now no longer necessary to run copytrans when pushing topics to Zanata. Topics will reuse the translations from previous revisions (if available) automatically. It is still good practice to notify translators of new topic revisions, but there is no longer any need to request copytrans be run.</p>
-
-</div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2012/11/12/change-to-translation-workflow/">Read on &rarr;</a>
-    </footer>
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2011/11/23/this-week-in-skynet-no22/">This Week in Skynet #23</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-11-23T15:33:00+10:00" pubdate data-updated="true">Nov 23<span>rd</span>, 2011</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>This week we upgraded to using HTTPS on the server and continued to extend the Zanata support.</p>
-
-</div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2011/11/23/this-week-in-skynet-no22/">Read on &rarr;</a>
-    </footer>
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2011/11/21/this-week-in-skynet-no23/">This Week in Skynet #22</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-11-21T08:33:00+10:00" pubdate data-updated="true">Nov 21<span>st</span>, 2011</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>This week has been all about integrating Skynet with Zanata.</p>
-
-</div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2011/11/21/this-week-in-skynet-no23/">Read on &rarr;</a>
-    </footer>
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2011/11/13/this-weekend-in-skynet/">This Weekend in Skynet</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-11-13T08:39:00+10:00" pubdate data-updated="true">Nov 13<span>th</span>, 2011</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>A busy weekend has added grouping to search results.</p>
-
-</div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2011/11/13/this-weekend-in-skynet/">Read on &rarr;</a>
-    </footer>
-  
-
-
-    </article>
-  
-  <div class="pagination">
-    
-    <a href="/blog/archives">Blog Archives</a>
-    
-  </div>
-</div>
-<aside class="sidebar">
-  
-    <section>
-  <h1>The PressGang CCMS</h1>
-  <p>PressGang CCMS is a web-based Component Content Management System (CCMS) written in Java.</p>
-  <p>It is open source and developed on JBoss Application Server 7.</p>
-  <a href="/pages/about">Read more&#8230;</a>
-</section>
-<section>
-  <h1>Recent Posts</h1>
-  <ul id="recent_posts">
-    
-      <li class="post">
-        <a href="/blog/2012/11/30/updates/">Updates</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2012/11/13/Bugfixes/">Bugfixes</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2012/11/12/change-to-translation-workflow/">Changes to Translation Workflow</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2011/11/23/this-week-in-skynet-no22/">This Week in Skynet #23</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2011/11/21/this-week-in-skynet-no23/">This Week in Skynet #22</a>
-      </li>
-    
-  </ul>
-</section>
-
-
-
-
-
-  
-</aside>
-
+        </header>
     </div>
-  </div>
-  <footer role="contentinfo"><p>
-  Copyright &copy; 2013 - The PressGang CCMS Project -
-  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
-  - Last Site update:  2013-02-20 17:06:15 +1000
-</p>
 
-</footer>
-  
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h3>
+<a name="welcome-to-pressgang-ccms" class="anchor" href="#welcome-to-pressgang-ccms"><span class="octicon octicon-link"></span></a>Welcome to PressGang CCMS</h3>
 
+<p>PressGang CCMS is an open source <a href="http://en.wikipedia.org/wiki/Component_content_management_system">Component Content Management System (CCMS)</a> for documentation or other content produced using <a href="http://www.docbook.org/">Docbook XML</a>. It is driven by a RESTful API and is being developed using open source components and utilities. PressGang CCMS is a series of Java applications deployed within JBoss Application Server.</p>
 
+<h3>
+<a name="who-needs-pressgang-ccms" class="anchor" href="#who-needs-pressgang-ccms"><span class="octicon octicon-link"></span></a>Who needs PressGang CCMS?</h3>
 
+<p>Following are a few of the scenarios where PressGang CCMS may be the right solution.</p>
 
+<ul>
+<li>Your documentation project currently uses Docbook XML in conjunction with command-line utilities, scripts, and revision control systems such as Subversion or Git</li>
+<li>You are currently managing your documentation using a word processor or expensive page-layout software, and want more control over the structure of your content without becoming an expert in XSLT, TeX, or other complicated technologies</li>
+<li>Your team is outgrowing its current Wiki, Markdown, or static HTML documentation solution</li>
+<li>You need better workflows for image and illustration management or localization</li>
+</ul><h3>
+<a name="who-develops-pressgang" class="anchor" href="#who-develops-pressgang"><span class="octicon octicon-link"></span></a>Who develops PressGang?</h3>
 
-  <script type="text/javascript">
-    (function() {
-      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
-      script.src = 'https://apis.google.com/js/plusone.js';
-      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
-    })();
-  </script>
+<p>PressGang CCMS was founded by Matthew Casperson (<a href="https://github.com/mcasperson" class="user-mention">@mcasperson</a>), Lee Newson (<a href="https://github.com/lnewson" class="user-mention">@lnewson</a>), Katie Miller (<a href="https://github.com/codemiller" class="user-mention">@codemiller</a>), and Darrin Mison (<a href="https://github.com/dmison" class="user-mention">@dmison</a>), who are part of the Red Hat Content Services tools team. We welcome your contributions to the project.</p>
 
+<h3>
+<a name="how-do-i-build-pressgang-ccms" class="anchor" href="#how-do-i-build-pressgang-ccms"><span class="octicon octicon-link"></span></a>How do I build PressGang CCMS?</h3>
 
+<p>Coming Soon</p>
 
-  <script type="text/javascript">
-    (function(){
-      var twitterWidgets = document.createElement('script');
-      twitterWidgets.type = 'text/javascript';
-      twitterWidgets.async = true;
-      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
-      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
-    })();
-  </script>
+<h3>
+<a name="where-can-i-find-out-more" class="anchor" href="#where-can-i-find-out-more"><span class="octicon octicon-link"></span></a>Where can I find out more?</h3>
 
+<p>Coming Soon</p>
+      </section>
+    </div>
 
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
 
+    
 
-
-</body>
+  </body>
 </html>
