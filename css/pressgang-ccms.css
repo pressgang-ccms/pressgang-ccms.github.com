@@ -1,0 +1,117 @@
+       /* Everything but the jumbotron gets side spacing for mobile first views */
+.header,
+.footer {
+  padding-left: 15px;
+  padding-right: 15px;
+
+}
+
+/* Custom page header */
+.header {
+  /*border-bottom: 1px solid #e5e5e5;*/
+  margin-bottom: 15px;
+  padding-top: 10px;
+  background-color: #485C76;
+  border-width: 0px 0px 1px 0px;
+  border-style: solid;
+  /* border-color: #2e3c52; */
+  background-image: linear-gradient(to bottom, rgb(063, 076, 097) 0px, rgb(72, 92, 118) 100%);
+  background-image: -webkit-gradient(linear, 0% 0, 0% 100%, from(rgb(063, 076, 097)), to(rgb(72, 92, 118)));
+
+  box-shadow: 0px 3px 15px #3e3e3e;
+}
+/* Make the masthead heading the same height as the navigation */
+.header h1 {
+  
+  margin-bottom: 15px;
+  line-height: 20px; 
+  color: #ffffff; 
+  padding-top:0px;
+  padding-bottom: 15px;
+  /*margin-top:15px;*/
+  
+
+
+}
+
+/* Custom page footer */
+.footer {
+  padding-top: 19px;
+  color: #777;
+  border-top: 1px solid #e5e5e5;
+  background-color: #FF00FF;
+  color: #ffffff;
+}
+
+body
+{
+  /*margin: 15px;*/
+  padding-top: 0;
+
+  padding-bottom: 0px;
+  /*background-color: #eeeeee;*/
+  background-color: #ccc;
+  /*background-image: linear-gradient(to bottom, rgb(063, 076, 097) 0px, rgb(72, 92, 118) 100%);
+  background-image: -webkit-gradient(linear, 0% 0, 0% 100%, from(rgb(063, 076, 097)), to(rgb(72, 92, 118)));*/
+}
+/*trbl*/
+.jumbotron
+{
+  padding: 0px;
+  background-color: #485c76;
+  color: #e6e6e6;
+  margin: 15px 0px 15px 0px;
+  box-shadow: 0px 3px 15px #3e3e3e;
+
+  border-width: 1px 0px 1px 0px;
+  border-style: solid;
+  border-color: #2e3c52; 
+  
+
+}
+
+.jumbotron .container p
+{
+ margin: 20px 0px 20px 0px; 
+
+}
+
+.mainmenu
+{
+  margin-bottom: 0;
+  line-height: 20px; 
+  padding-top:0px;
+  padding-bottom: 0px;
+  margin-top:15px;
+}
+
+.mainmenu a
+{
+  /*color: #000000;*/
+}
+
+.panel-ccms
+{
+  background-image: linear-gradient(to bottom, rgb(72, 92, 118) 0px, rgb(232, 232, 232) 100%);
+  background-image: -webkit-gradient(linear, 0% 0, 0% 100%, from(rgb(72, 92, 118)), to(rgb(232, 232, 232)));
+}
+
+.panel-body
+{
+  background-color: #e6e6e6;
+}
+
+.highlight pre
+{
+  font-size: 0.8em;
+}
+
+.homebanner h3
+{
+   color:#e6e6e6;
+}
+
+.homebanner p
+{
+   color: #ccc; font-size: 18px;
+}
