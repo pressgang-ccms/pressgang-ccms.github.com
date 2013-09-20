@@ -1,0 +1,28 @@
+---
+layout: post
+title: "Updates"
+date: 2012-11-30 09:30
+comments: true
+categories: updates  
+author: Lee Newson
+
+---
+
+* Upgraded Hibernate from 3.6.8 to 3.6.10
+* Fixed database collations to correctly use UTF8 instead of latin1. Fix for BZ#857183.
+* Removed old database tables that were no longer being used.
+* Fixed some spelling mistakes on database table columns.
+* Fixed an issue that was causing Image revisions not to be saved.
+* Added the Timestamp field to the log table on the Topic View page.
+* Re-implemented the back-end querying. This was primarily done to fix BZ#837993 and BZ#869459.
+* Fixed an issue that would cause the session to disconnect with the database upon some errors. See BZ#869623.
+* Fixed an issue that was causing log messages to not be set when using anything but the REST Easy client code. See BZ#879412.
+* Updated how logging is used via the REST API. It no longer takes in a `RESTLogDetails` object and instead has three query parameters: `message`, `flag` and `userId`. All parameters are optional.
+* Fixed the XML endpoints to include the doctype definitions. To go with this a doctype is now associated with all topics, however Docbook 4.5 is the only supported option so it can't be set when creating a topic. See BZ#869129.
+* Some optimisation on the REST endpoints to help speed up requests.
+* Added server GUI monitoring tools, viewable only by admins.
+* Fixed some bugs found in the REST API during the new GUI testing.
+* Changed the IA account password to encourage users to use their kerberos account.
+* Added new REST endpoints:
+	* All primary JSON endpoints that don't return a collection, now have a revision endpoint. eg `/rest/1/tag/get/json/<ID>/r/<REVISION>`
+	* Added a RAW image endpoint that will return the image data directly. eg `/rest/1/image/get/raw/10`

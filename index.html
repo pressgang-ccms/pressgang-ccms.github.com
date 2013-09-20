@@ -1,0 +1,63 @@
+---
+layout: default
+title: Welcome to PressGang CCMS
+page_type: homepage
+---
+
+<div class="jumbotron">
+   <div class="container">
+      <p>
+      PressGang CCMS is an open source Component Content Management System (CCMS) for documentation or other content produced using Docbook XML. It is driven by a RESTful API and is being developed using open source components and utilities. PressGang CCMS is a series of Java applications deployed within JBoss Application Server.
+      </p>
+  </div>
+</div>
+
+<div class="container">
+      <!-- Example row of columns -->
+      <div class="row">
+        <div class="col-lg-8">
+
+          <div class="panel panel-default">
+            <div class="panel-body" style="padding-top: 0px;">
+
+              <h3>Who needs PressGang CCMS?</h3>
+              <p>Following are a few of the scenarios where PressGang CCMS may be the right solution.</p>
+              <ul>
+              <li>Your documentation project currently uses Docbook XML in conjunction with command-line utilities, scripts, and revision control systems such as Subversion or Git</li>
+              <li>You are currently managing your documentation using a word processor or expensive page-layout software, and want more control over the structure of your content without becoming an expert in XSLT, TeX, or other complicated technologies</li>
+              <li>Your team is outgrowing its current Wiki, Markdown, or static HTML documentation solution</li>
+              <li>You need better workflows for image and illustration management or localization</li>
+              </ul>
+              <h3>Who develops PressGang?</h3>
+              <p>PressGang CCMS was founded by Matthew Casperson (@mcasperson), Lee Newson (@lnewson), Katie Miller (@codemiller), and Darrin Mison (@dmison), who are part of the Red Hat Content Services tools team. We welcome your contributions to the project.
+              </p>
+              <h3>How do I build PressGang CCMS?</h3>
+              <p>Coming Soon</p>
+
+              <h3>How do I contribute?</h3>
+              <p>To contribute to a repository within the PressGang CCMS project, fork the repository and submit a pull request. We welcome all contributions.
+              </p>
+              <h3>Documentation</h3>
+              <p>A User Guide is under development.</p>
+
+              <h3>Where can I find out more?</h3>
+              <p>Road Map Bugs and RFEs are tracked in Red Hat Bugzilla</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4">
+          {% include posts.html %}
+            
+
+
+    </div>
+  </div>
+</div>
+
+
+  <!-- {% capture content_size %}{{ post.content | size }}{% endcapture %}
+                  {% capture excerpt_size %}{{ post.excerpt | size }}{% endcapture %}
+                  {%  unless content_size == excerpt_size  %}
+                  {{ post.excerpt }}
+                  {% endunless  %} -->

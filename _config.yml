@@ -1,0 +1,6 @@
+name: PressGang CCMS
+pygments: true
+
+permalink: /blog/:year/:month/:day/:title/
+
+excerpt_separator: <!-- MORE -->

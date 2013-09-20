@@ -1,0 +1,21 @@
+---
+layout: post
+title: "Bugfixes"
+date: 2012-11-13 12:04
+comments: true
+categories: updates  
+author: Lee Newson
+---
+
+I applied a minor bug fix release last night to the PressGang servers. Fixes are as follows:
+
+<!-- MORE -->
+
+ * Fixed the Double Login Issue. See BZ 867507
+ * Fixed an issue where the Topic XML Editor wouldn't display when switching tabs.
+ * Fixed an issue with pushing Translations to Zanata.
+ * Fixed an issue where Converstions weren't being ended when an error was thrown.
+* Fixed an issue where entering an invalid topic Id in the Quick Select box would just cause the page to reload. It now will display the  Angry Terminator.
+ * Fixed an issue where the REST Server would throw an NPE when expanding LogDetails.
+ * Fixed an issue where the Project Description Query parameter wouldn't work.
+
